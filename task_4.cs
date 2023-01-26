@@ -1,4 +1,4 @@
-﻿// Задача 4
+// Задача 4
 List<int> numbers = new List<int>();
 for(int i = 1; i <= 3; i++)
 {
@@ -12,6 +12,3 @@ if(numbers[2] > max) max = numbers[2];
 
 Console.Write("max = ");
 Console.WriteLine(max);
-
-
-
