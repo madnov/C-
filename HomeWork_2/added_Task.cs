@@ -1,4 +1,4 @@
-﻿// Дополнительная задача
+// Дополнительная задача
 Console.Clear();
 Console.Write("Введите числа от 0 до 100: ");
 int number = Convert.ToInt32(Console.ReadLine());
