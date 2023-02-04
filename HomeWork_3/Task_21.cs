@@ -1,24 +1,19 @@
 // Задача 21
 Console.Clear();
-Console.Write("Введите первую координату А: ");
-int a1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите вторую координату А: ");
-int a2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите третью координату А: ");
-int a3 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите первую координату B: ");
-int b1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите вторую координату B: ");
-int b2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите третью координату B: ");
-int b3 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите координату X(1): ");
+double x1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координату Y(1): ");
+double y1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координату Z(1): ");
+double z1 = Convert.ToDouble(Console.ReadLine());
 
- int res1 = b1 - a1;
- int res2 = b2 - a2;
- int res3 = b3 - a3;
+Console.Write("Введите координату X(2): ");
+double x2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координату Y(2): ");
+double y2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координату Z(2): ");
+double z2 = Convert.ToDouble(Console.ReadLine()) ;
 
-int res4 = (res1 * res1) + (res2 * res2) + (res3 * res3);
-double result = Math.Sqrt(res4);
-
-Console.WriteLine(result);
+double result = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2)); 
+Console.WriteLine(Math.Round(result,2));

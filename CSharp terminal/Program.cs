@@ -1,24 +1,18 @@
-﻿// Задача 21
+﻿// Задача 19
 Console.Clear();
-Console.Write("Введите первую координату А: ");
-int a1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите вторую координату А: ");
-int a2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите третью координату А: ");
-int a3 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите первую координату B: ");
-int b1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите вторую координату B: ");
-int b2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите третью координату B: ");
-int b3 = Convert.ToInt32(Console.ReadLine());
-
- int res1 = b1 - a1;
- int res2 = b2 - a2;
- int res3 = b3 - a3;
-
-int res4 = (res1 * res1) + (res2 * res2) + (res3 * res3);
-double result = Math.Sqrt(res4);
-
-Console.WriteLine(result);
+Console.Write("Введите пятизначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+while (number < 10000 || number > 99999)
+    {
+        Console.Write("Ошибка!\nВведите пятизначное число: ");
+        number = Convert.ToInt32(Console.ReadLine());
+    }    
+int num1 = number / 10000;
+int num2 = (number / 1000) % 10;
+int num3 = number % 10;
+int num4 = (number / 10) % 10;
+if (num1 == num3 && num2 == num4)
+    Console.WriteLine("да");
+else
+    Console.WriteLine("нет");
