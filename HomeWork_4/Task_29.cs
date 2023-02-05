@@ -16,11 +16,11 @@ for (int i = 0; i < count; i++)
     array[i] = h;
 }
 Console.Write("Введите рост: ");
-int height =Convert.ToInt32(Console.ReadLine());
+int height = Convert.ToInt32(Console.ReadLine());
 
 int total = 1;
 for (int i = 0; i < array.Length; i++)
 {
     if (height <= array[i]) total++;
 }
-Console.WriteLine(total);
+Console.WriteLine("Будете в очереди " + total);
