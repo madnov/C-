@@ -1,4 +1,4 @@
-﻿// Задача 29
+// Задача 29
 Console.Clear();
 
 Console.Write("Введите количество учеников: ");
@@ -9,7 +9,7 @@ while (count < 1 || count > 100)
     count = Convert.ToInt32(Console.ReadLine());
 }
 int[] array = new int [count];
-for (int i = 0; i < count; i++ )
+for (int i = 0; i < count; i++)
 {
     Console.Write("Введите рост учеников по убыванию: ");
     int h = Convert.ToInt32(Console.ReadLine());
