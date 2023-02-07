@@ -1,26 +1,13 @@
-﻿// Задача 29
-Console.Clear();
+﻿Console.Clear();
 
-Console.Write("Введите количество учеников: ");
-int count = Convert.ToInt32(Console.ReadLine());
-while (count < 1 || count > 100)
+int FindSumm(int[]arr)
 {
-    Console.Write("Введите количество учеников(не более 100): ");
-    count = Convert.ToInt32(Console.ReadLine());
+    int total = 0;
+    for (int i = 0; i < arr.Length; i++)
+        total += arr[i];
+    return total;    
 }
-int[] array = new int [count];
-for (int i = 0; i < count; i++)
-{
-    Console.Write("Введите рост учеников по убыванию: ");
-    int h = Convert.ToInt32(Console.ReadLine());
-    array[i] = h;
-}
-Console.Write("Введите рост: ");
-int height = Convert.ToInt32(Console.ReadLine());
 
-int total = 1;
-for (int i = 0; i < array.Length; i++)
-{
-    if (height <= array[i]) total++;
-}
-Console.WriteLine("Будете в очереди " + total);
+int[] array = {2, 45, 64, 61, 4, 7, 8, 97};
+
+Console.WriteLine(FindSumm(array));
