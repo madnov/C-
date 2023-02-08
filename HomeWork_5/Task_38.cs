@@ -1,8 +1,8 @@
-﻿// Задача 38
+// Задача 38
 
 Console.Clear();
 
-double[] array = {34.3, 85.8, 43.3, 8.5, 30.34, 2.3};
+double[] array = {34.3, 85.8, 43.3, 8.5, 30.34, 12.3};
 
 void FindDifference(double[] arr)
 {
