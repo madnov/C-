@@ -1,9 +1,4 @@
 // Задача 38
-
-Console.Clear();
-
-double[] array = {34.3, 85.8, 43.3, 8.5, 30.34, 12.3};
-
 void FindDifference(double[] arr)
 {
     double max = 0;
@@ -14,9 +9,9 @@ void FindDifference(double[] arr)
         if (arr[i] < min) min = arr[i];   
     }
     double result = max - min;
-    Console.WriteLine(max);
-    Console.WriteLine(min);
-    Console.WriteLine(result);
+    Console.WriteLine($"{max} - {min} = {result}");
 }
 
+Console.Clear();
+double[] array = {34.3, 85.8, 43.3, 8.5, 30.34, 12.3};
 FindDifference(array);

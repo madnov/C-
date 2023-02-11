@@ -1,17 +1,11 @@
 // Задача 36
-Console.Clear();
+void InputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(-100,100);
+}
 
-int[] array = new int[5];
-Random random = new Random();
-
-for (int i = 0; i < array.Length; i++)
-    array[i] = random.Next(-100,100);
-
-foreach (int el in array)
-    Console.Write($"{el} ");
-Console.WriteLine();
-
-int FindSumm(int[] arr)
+int FindSumm(int[] array)
 {
     int total = 0;
     for (int i = 1; i < array.Length; i += 2)
@@ -19,4 +13,8 @@ int FindSumm(int[] arr)
 
     return total;
 }
+Console.Clear();
+int[] array = new int[5];
+InputArray(array);
+Console.WriteLine($"[{string.Join(", ",array)}]");
 Console.WriteLine(FindSumm(array));

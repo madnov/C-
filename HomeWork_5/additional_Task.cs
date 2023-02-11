@@ -1,4 +1,4 @@
-﻿// Дополнительная задача
+// Дополнительная задача
 void InputArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
