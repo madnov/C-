@@ -8,8 +8,8 @@ void InputArray(int[] array)
 
 void FindResult(int[] array)
 {
-    string even = "";
-    string odd = "";
+    string even = string.Empty;
+    string odd = string.Empty;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] % 2 == 0) even += array[i].ToString() + " ";
