@@ -1,9 +1,9 @@
-// Дополнительная задача 1
+// Дополнительная задача 1(не решена)
 
 void Result(string symbols)
 {
     string change = string.Empty;
-    for(int i = 0; i < symbols.Length; i++)
+    for(int i = 0; i < Math.Pow(symbols.Length, symbols.Length); i++)
        
  Console.WriteLine();
 }
