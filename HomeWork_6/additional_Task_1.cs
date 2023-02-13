@@ -1,6 +1,6 @@
 // Дополнительная задача 1(не решена)
 
-void Result(string symbols)
+void FinsdResult(string symbols,int lenght)
 {
     string change = string.Empty;
     for(int i = 0; i < Math.Pow(symbols.Length, symbols.Length); i++)
@@ -17,4 +17,4 @@ while(symbols.Length <= 0 || symbols.Length >= 9)
     symbols = Console.ReadLine();
 }    
 Console.WriteLine(symbols); 
-Result(symbols);
+FindResult(symbols);
