@@ -1,11 +1,15 @@
 // Дополнительная задача 1(не решена)
 
-void FinsdResult(string symbols,int lenght)
+// int FindResult(int number,string symbols)
+// {
+//     if (number == 1) return 1;
+//       string = 
+// }
+int FindFactorial(int lenght)
 {
-    string change = string.Empty;
-    for(int i = 0; i < Math.Pow(symbols.Length, symbols.Length); i++)
-       
- Console.WriteLine();
+   if (lenght == 1) return 1;
+   else
+      return   lenght = lenght * FindFactorial(lenght - 1);      
 }
 
 Console.Clear();
@@ -15,6 +19,9 @@ while(symbols.Length <= 0 || symbols.Length >= 9)
 {
     Console.Write("Вы ввели недопустимое количество символов!\nПовторите попытку: ");
     symbols = Console.ReadLine();
-}    
-Console.WriteLine(symbols); 
-FindResult(symbols);
+}
+int lenght = symbols.Length;
+FindFactorial(lenght);  
+int number =(FindFactorial(lenght));  
+Console.WriteLine(symbols);
+FindResult(number, symbols);

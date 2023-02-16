@@ -1,4 +1,4 @@
-﻿// Задача 52
+// Задача 52
 
 void FillArray(int[,] array)
 {
@@ -28,5 +28,3 @@ int [,] array = new int[5, 4];
 FillArray(array);
 PrintArray(array);
 FindSum(array);
-
-
