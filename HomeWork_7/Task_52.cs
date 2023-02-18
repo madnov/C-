@@ -1,47 +1,47 @@
 // Задача 52
 
-void FillArray(int[,] array)
+void FillMatrix(int[,] matrix)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-        for (int j = 0; j < array.GetLength(1); j++)
-            array[i, j] = new Random().Next(1, 10);
-}
-
-void FindAverage(int[,] array)
-{
-    Console.WriteLine("Cреднее арифметическое\nстолбцов: ");
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        double total = 0;
-        for (int j = 0; j < array.GetLength(0); j++)
-        {
-            total += array[j, i];
-        }
-        Console.Write($"{Math.Round(total / array.GetLength(0), 2)}; ");
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = new Random().Next(1, 10);
     }
 }
 
-void PrintArray(int[,] array)
+void FindAverage(int[,] matrix)
 {
-    Console.WriteLine("Заданный двумерный\nмассив: ");
-    for (int i = 0; i < array.GetLength(0); i++)
+    Console.WriteLine("Cреднее арифметическое столбцов:");
+    for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        double total = 0;
+        for (int j = 0; j < matrix.GetLength(0); j++)
         {
-            Console.Write($"{array[i, j]} ");
+            total += matrix[j, i];
+        }
+        Console.Write($"{Math.Round(total / matrix.GetLength(0), 2)} \t");
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    Console.WriteLine("Заданный двумерный массив:");
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j]} \t");
         }
         Console.WriteLine();
     }
 }
 
 Console.Clear();
-Console.Write("Введите количество строк: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов: ");
-int cols = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int[rows, cols];
+Console.Write("Введите размер массива: ");
+int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int[size[0], size[1]];
 
-FillArray(array);
-PrintArray(array);
+FillMatrix(matrix);
+PrintMatrix(matrix);
 Console.WriteLine();
-FindAverage(array);
+FindAverage(matrix);

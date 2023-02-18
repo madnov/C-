@@ -1,20 +1,19 @@
 // Задача 50    
 
 Console.Clear();
-int [,] array = {
+int [,] matrix = {
                     {1, 4, 7, 2},
                     {5, 9, 2, 3},
                     {8, 4, 2, 4}
                 };
-Console.Write("Введите номер строки: ");
-int row = Convert.ToInt32(Console.ReadLine());                   
-Console.Write("Введите номер столбца: ");
-int col = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите элементы массива: ");
+int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+
 try 
 {
-    Console.WriteLine(array[row,col]);
+    Console.WriteLine($"На данной позиции находится элемент: {matrix[size[0]-1,size[1]-1]}");
 }
 catch(IndexOutOfRangeException)
 {
-    Console.WriteLine("Такого элемента в массиве нет! ");
+    Console.WriteLine("Такой позиции в массиве нет! ");
 } 

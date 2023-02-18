@@ -1,32 +1,28 @@
 // Задача 47
 
-void FillArray (double[,] array)
+void FillMatrix (double[,] matrix)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-        for (int j = 0; j < array.GetLength(1); j++)
-            array[i, j] =  new Random().Next(-5,20) / 2.5;
-        
-       
+    for (int i = 0; i < matrix.GetLength(0); i++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] =  new Random().Next(-5,20) / 2.5;    
 }
 
-void PrintArray(double[,] array)
+void PrintMatrix(double[,] matrix)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j]} ");
+            Console.Write($"{matrix[i, j]} \t");
         }
     Console.WriteLine();    
     }        
 }       
 
 Console.Clear();
-Console.Write("Введите количество строк в двумерном массиве: ");   
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов: ");
-int cols = Convert.ToInt32(Console.ReadLine());
-double[,] array = new double [rows, cols];
+Console.Write("Введите размер массива: ");
+int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+double[,] matrix = new double[size[0], size[1]];
 
-FillArray(array);
-PrintArray(array);
+FillMatrix(matrix);
+PrintMatrix(matrix);
