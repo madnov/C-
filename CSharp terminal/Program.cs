@@ -1,43 +1,37 @@
-﻿// Задача 58
-               
-void ProductOfTwoMatrix(int[,] matrix1, int[,] matrix2, int[,] product)
-{
-    for (int i = 0; i < matrix1.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrix2.GetLength(1); j++)
-            {
-                product[i, j] = 0;
+﻿// Задача 61 - Равнобедренный треугольник Паскаля
 
-                for (int k = 0; k < matrix1.GetLength(0); k++)
-                {
-                    product[i, j] += matrix1[i, k] * matrix2[k, j];
-                }
-            }
-        }   
-}
+int row = 9;
+int[,] triangle = new int[row, row];
+const int cellWidth = 3;
 
-void PrintMatrix(int[,] product)
+void FillTriangle(int[,] trianlge)
 {
-    for (int i = 0; i < product.GetLength(0); i++)
+    for (int i = 0; i < row; i++)
+    { 
+        triangle[i, 0] = 1;
+        triangle[i, i] = 1;
+    }
+
+    for (int i = 2; i < row; i++)
     {
-        for (int j = 0; j < product.GetLength(1); j++)
+        for (int j = 1; j <= i; j++)
         {
-            Console.Write($"{product[i, j]} \t");
+            triangle[i,j] = triangle[i - 1, j - 1] + triangle[i - 1, j];
         }
-        Console.WriteLine();
     }
 }
 
+void PrintTriangle(int[,] triangle)
+{
+    for (int i = 0; i < triangle.GetLength(0); i++)
+        {         
+            for (int j = 0; j < triangle.GetLength(1); j++)
+            if (triangle[i, j] != 0)
+                Console.Write($"{triangle[i, j]} \t");
+                
+        Console.WriteLine();        
+        }
+}
 Console.Clear();
-
-int[,] matrix1 = {  {2, 4, 5},
-                    {3, 2, 6},
-                    {4, 1, 6}
-                 };
-int[,] matrix2 = {  {3, 4, 1},
-                    {3, 3, 3},
-                    {4, 5, 6}
-                 };
-int[,] product = new int[3,3];
-ProductOfTwoMatrix(matrix1, matrix2, product);
-PrintMatrix(product); 
+FillTriangle(triangle);
+PrintTriangle(triangle);
