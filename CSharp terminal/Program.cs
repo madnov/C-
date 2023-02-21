@@ -1,37 +1,34 @@
-﻿// Задача 61 - Равнобедренный треугольник Паскаля
+﻿// Задача 60 
 
-int row = 9;
-int[,] triangle = new int[row, row];
-const int cellWidth = 3;
-
-void FillTriangle(int[,] trianlge)
+void WriteIndexMatrix (int[,,] matrix3D)
 {
-    for (int i = 0; i < row; i++)
-    { 
-        triangle[i, 0] = 1;
-        triangle[i, i] = 1;
-    }
-
-    for (int i = 2; i < row; i++)
+  for (int i = 0; i < matrix3D.GetLength(0); i++)
+  {
+    for (int j = 0; j < matrix3D.GetLength(1); j++)
     {
-        for (int j = 1; j <= i; j++)
-        {
-            triangle[i,j] = triangle[i - 1, j - 1] + triangle[i - 1, j];
-        }
+      for (int k = 0; k < matrix3D.GetLength(2); k++)
+      {
+        Console.Write( $"{matrix3D[i,j,k]}({i},{j},{k}) ");
+      }
+      Console.WriteLine();
     }
-}
-
-void PrintTriangle(int[,] triangle)
-{
-    for (int i = 0; i < triangle.GetLength(0); i++)
-        {         
-            for (int j = 0; j < triangle.GetLength(1); j++)
-            if (triangle[i, j] != 0)
-                Console.Write($"{triangle[i, j]} \t");
-                
-        Console.WriteLine();        
-        }
+    Console.WriteLine();
+  }
 }
 Console.Clear();
-FillTriangle(triangle);
-PrintTriangle(triangle);
+int[,,] matrix3D = 
+{
+    {
+        {32, 34},
+        {35, 45}    
+    },
+    {
+        {44, 65},
+        {12, 36}
+    },
+    {
+        {45, 79},
+        {98, 33}
+    }
+};
+WriteIndexMatrix(matrix3D);
