@@ -1,4 +1,4 @@
-﻿// Задача 64
+// Задача 64
 
 Console.Clear();
 Console.Write("Введите число: ");
@@ -13,6 +13,5 @@ for (int i = n; i > 0; i--)
 {
     Console.Write($"{NumberOutput(i)} ");
 }
-
 
 
