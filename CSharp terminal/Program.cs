@@ -1,18 +1,14 @@
-﻿// Задача 64
+﻿// Задача 66
 
-Console.Clear();
-Console.Write("Введите число: ");
+int FindSumm(int m, int n)
+{
+    if(m == n) return m;
+    return m + FindSumm(m + 1, n);         
+}
+
+Console.Write("Введите первое число: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
 int n = Convert.ToInt32(Console.ReadLine());
-
-int NumberOutput(int n)
-{
-    if(n == 1) return 1;
-    else return  NumberOutput(n - 1) + 1;   
-}
-for (int i = n; i > 0; i--)
-{
-    Console.Write($"{NumberOutput(i)} ");
-}
-
-
+Console.Write($"Сумма чисел от {m} до {n} = {FindSumm(m, n)}");
 

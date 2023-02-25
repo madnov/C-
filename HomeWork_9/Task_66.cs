@@ -1,13 +1,13 @@
 // Задача 66
 
-Console.Clear();
-Console.Write("Введите два числа: ");
-int[] s = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
-
-int FindSumm(int n)
+int FindSumm(int m, int n)
 {
-    if(n == s[0]) return s[0];
-    else return n + FindSumm(n - 1);         
+    if(m == n) return m;
+    return m + FindSumm(m + 1, n);         
 }
 
-Console.Write($"Сумма чисел от {s[0]} до {s[1]} = {FindSumm(s[1])}");
+Console.Write("Введите первое число: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write($"Сумма чисел от {m} до {n} = {FindSumm(m, n)}");

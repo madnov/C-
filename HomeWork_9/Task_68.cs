@@ -1,9 +1,5 @@
 // Задача 68
 
-Console.Clear();
-Console.Write("Введите два числа: ");
-int[] s = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
-
 int AckerFunct(int m, int n)
 {
     if (m == 0) return n + 1;
@@ -12,4 +8,9 @@ int AckerFunct(int m, int n)
     return AckerFunct(m, n);
 }
 
-Console.WriteLine(AckerFunct(s[0], s[1]));
+Console.Clear();
+Console.Write("Введите первое число: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(AckerFunct(m, n));
