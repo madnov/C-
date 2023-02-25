@@ -1,14 +1,15 @@
 ﻿// Задача 66
 
-int FindSumm(int m, int n)
+int FindSumm(int a, int b)
 {
-    if(m == n) return m;
-    return m + FindSumm(m + 1, n);         
+    if(b == 0) return 1;
+    return a * FindSumm(a, b - 1);         
 }
 
+Console.Clear();
 Console.Write("Введите первое число: ");
-int m = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write($"Сумма чисел от {m} до {n} = {FindSumm(m, n)}");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.Write($"{a} возведённое в степень {b} = {FindSumm(a, b)}");
 
