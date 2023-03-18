@@ -1,15 +1,23 @@
-﻿// Задача 66
+﻿Console.Clear();
 
-int FindSumm(int a, int b)
-{
-    if(b == 0) return 1;
-    return a * FindSumm(a, b - 1);         
+int cpuNumber = new Random().Next(1,101);
+Console.Write("Введите число от 1 до 100: ");
+int plNumber = Convert.ToInt32(Console.ReadLine());
+int count = 1;
+while (cpuNumber != plNumber)
+{ 
+    if (cpuNumber > plNumber)
+    {
+        Console.Write("Загаданное число больше, попробуйте ещё: ");
+        plNumber = Convert.ToInt32(Console.ReadLine());
+        count++;
+    }    
+    else if (cpuNumber < plNumber)
+    {
+        Console.Write("Загаданное число меньше, попробуйте ещё: ");
+        plNumber = Convert.ToInt32(Console.ReadLine());
+        count++;
+    } 
+       
 }
-
-Console.Clear();
-Console.Write("Введите первое число: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.Write($"{a} возведённое в степень {b} = {FindSumm(a, b)}");
-
+Console.WriteLine($"Поздравляем вы угадали c {count} раза, это число {cpuNumber}");
