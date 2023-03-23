@@ -1,4 +1,4 @@
-﻿void SortSelection(int[] collection)
+void SortSelection(int[] collection)
 {
     int size = collection.Length;
     for (int i = 0; i < size - 1; i++)
@@ -18,9 +18,3 @@
 int[] collection = {2, 4, 1, 3, 9, 6, 7};
 SortSelection(collection);
 Console.WriteLine($"[{string.Join(", ",collection)}]");
-
-
-
-
-
-
