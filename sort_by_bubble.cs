@@ -1,7 +1,3 @@
-﻿/*
-Cортировка пузырьком
-Начальный массив: [3, 1, 5, 0, 7, 9, 8]
-*/
 Console.Write("Введите кол-во элементов массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[n];
@@ -25,5 +21,3 @@ for (int i = 0; i < n; i++)
     }
 }
 Console.Write($"Конечный массив:\n[{string.Join(", ", array)}]");
-
-
